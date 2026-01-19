@@ -2,6 +2,7 @@ import requests
 import datetime as dt
 import pandas as pd
 import matplotlib.pyplot as plt
+import os as os
 
 lat = 51.2917
 lon = -114.01
@@ -57,3 +58,9 @@ plt.legend()
 plt.xticks(rotation=45)
 plt.savefig('paris_temps.png')
 plt.show()
+
+if not os.path.exists('data'):
+    os.makedirs('data')
+
+df.to_csv('data/paris_temps.csv', index=False)
+print('Data saved to data/paris_temps.csv') 
