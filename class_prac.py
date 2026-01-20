@@ -13,3 +13,22 @@ prod_config = APIConfig('sk-prog-key',model = 'gpt-4',max_tokens = 200)
 
 print(devconfig.model)
 print(prod_config.model)
+
+#--------------------
+class DataValidator():
+    def __init__(self):
+        self.errors = []
+
+    def is_valid_email(self,email):
+        if not '@' in email:
+            self.errors.append(f'The email {email} is not valid.')
+            return False
+        return True
+    
+    def get_errors(self):
+        return self.errors
+    
+
+validator = DataValidator()
+validator.is_valid_email('sanket.com')
+print(validator.get_errors())
