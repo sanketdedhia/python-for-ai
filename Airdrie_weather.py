@@ -39,5 +39,5 @@ plt.ylabel('Temp in celcius')
 plt.legend()
 plt.xticks(rotation=45)
 
-df.to_csv('data/airdrie_weather_data.csv')
+df.to_csv('data/airdrie_weather_data.csv', index=False)
 plt.savefig('airdrie_temps.png')
